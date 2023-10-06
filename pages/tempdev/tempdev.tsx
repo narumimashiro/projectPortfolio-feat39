@@ -4,9 +4,9 @@ import Link from 'next/link'
 
 
 // 開発中にテキトーに表示させたいときに使うところ
-import Geometric from '@//materials/Geometric'
-import MobileNavList from '@//materials/MobileNavList'
-import MySnsLink from '@//materials/MySnsLink'
+import Geometric from '@/materials/Geometric'
+import MobileNavList from '@/materials/MobileNavList'
+import MySnsLink from '@/materials/MySnsLink'
 import MyProfFooter from '@//ui_components/MyProfFooter'
 
 const TempDev = () => {

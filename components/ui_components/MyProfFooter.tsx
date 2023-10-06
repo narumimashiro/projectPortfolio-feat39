@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 // My Components
-import MySnsLink from '@//materials/MySnsLink'
+import MySnsLink from '@/materials/MySnsLink'
 
 // common
 import * as Def from 'common/define'
