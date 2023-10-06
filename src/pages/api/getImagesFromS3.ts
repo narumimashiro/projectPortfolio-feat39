@@ -5,20 +5,33 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import AWS from 'aws-sdk'
 
-AWS.config.update({
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  region: process.env.AWS_REGION,
-});
+// TODO.Vercelデプロイ時にAPIフォルダが呼び出せなかった...
+// AWS.config.update({
+//   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+//   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+//   region: process.env.AWS_REGION,
+// })
 
 const handler = async (
   req: NextApiRequest,
   res: NextApiResponse
 ) => {
 
+  const functions = require('firebase-functions')
+
+  const AWS_ACCESS_KEY_ID = functions.config().aws_access_key_id.env
+  const AWS_SECRET_ACCESS_KEY = functions.config().aws_secret_access_key.env
+  const AWS_REGION = functions.config().aws_region.env
+
+  AWS.config.update({
+    accessKeyId: AWS_ACCESS_KEY_ID,
+    secretAccessKey: AWS_SECRET_ACCESS_KEY,
+    region: AWS_REGION,
+  })
+
   const s3 = new AWS.S3()
 
-  const bucketName: string | undefined = process.env.AWS_S3_BUCKET_NAME
+  const bucketName: string | undefined = functions.config().aws_s3_bucket_name.env
   if(bucketName) {
     const params: AWS.S3.ListObjectsRequest = {
       Bucket: bucketName

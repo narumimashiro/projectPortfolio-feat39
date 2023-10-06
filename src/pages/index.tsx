@@ -12,7 +12,6 @@ import MyProfFooter from '@/components/ui_components/MyProfFooter'
 
 export const getStaticProps = async () => {
 
-  // axios.defaults.baseURL = process.env.VERCEL_URL
   try {
     const response = await axios.get('/api/getImagesFromS3')
     const imageList: DefType.S3[] = response.data.Contents
