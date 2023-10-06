@@ -4,7 +4,7 @@ import axios from 'axios'
 import { InferGetStaticPropsType } from 'next'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
-import * as DefType from '@/common/deftype'
+import * as DefType from 'common/deftype'
 
 // MyComponent
 import BackgoundImageSlide from '@/components/ui_components/BackgroundImageSlide'

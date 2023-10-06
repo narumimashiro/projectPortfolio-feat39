@@ -21,7 +21,9 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "~/*": ["./styles/*"]
+      "~/*": ["./styles/*"],
+      "common/*": ["./common/*"],
+      "recoil/*": ["./recoil/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
