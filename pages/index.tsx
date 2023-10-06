@@ -7,8 +7,8 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>
 import * as DefType from 'common/deftype'
 
 // MyComponent
-import BackgoundImageSlide from '@/components/ui_components/BackgroundImageSlide'
-import MyProfFooter from '@/components/ui_components/MyProfFooter'
+import BackgoundImageSlide from '@//ui_components/BackgroundImageSlide'
+import MyProfFooter from '@//ui_components/MyProfFooter'
 
 export const getStaticProps = async () => {
 

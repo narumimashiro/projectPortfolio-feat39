@@ -7,9 +7,9 @@ import { useWindowWidth } from '@react-hook/window-size'
 import styles from '~/components/NavHeader.module.sass'
 
 // My Components
-import HumbergerButton from '@/components/materials/HumbergerButton'
-import MobileNavList from '@/components/materials/MobileNavList'
-import Geometric from '@/components/materials/Geometric'
+import HumbergerButton from '@//materials/HumbergerButton'
+import MobileNavList from '@//materials/MobileNavList'
+import Geometric from '@//materials/Geometric'
 
 // common
 import * as Def from 'common/define'

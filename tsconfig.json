@@ -20,10 +20,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./components/*"],
       "~/*": ["./styles/*"],
       "common/*": ["./common/*"],
-      "recoil/*": ["./recoil/*"]
+      "recoil/*": ["./recoil/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
