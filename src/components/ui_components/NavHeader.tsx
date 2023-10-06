@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useWindowWidth } from '@react-hook/window-size'
 
 // styles
-import styles from '@/styles/components/NavHeader.module.sass'
+import styles from '~/components/NavHeader.module.sass'
 
 // My Components
 import HumbergerButton from '@/components/materials/HumbergerButton'

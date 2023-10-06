@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import styles from '@/styles/components/MobileNavList.module.sass'
+import styles from '~/components/MobileNavList.module.sass'
 
 interface Props {
   children: ReactNode

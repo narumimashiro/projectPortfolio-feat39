@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import axios from 'axios'
 import * as DefType from '@/common/deftype'
-import styles from '@/styles/components/BackgroundImageSlide.module.sass'
+import styles from '~/components/BackgroundImageSlide.module.sass'
 
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
