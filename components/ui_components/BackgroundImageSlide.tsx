@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import axios from 'axios'
-import * as DefType from '@/common/deftype'
-import styles from '@/styles/components/BackgroundImageSlide.module.sass'
+import * as DefType from 'common/deftype'
+import styles from '~/components/BackgroundImageSlide.module.sass'
 
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -10,8 +10,8 @@ import 'slick-carousel/slick/slick-theme.css'
 
 // recoil
 import { useRecoilValue } from 'recoil'
-import { displayWidth } from '@/recoil/common'
-import { displayHeight } from '@/recoil/common'
+import { displayWidth } from 'recoil/common'
+import { displayHeight } from 'recoil/common'
 
 const s3ImageUrl = 'https://naru396-aws-storage.s3-ap-northeast-1.amazonaws.com'
 

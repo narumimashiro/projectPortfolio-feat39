@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react'
 
 // My Components
-import MySnsLink from '@/components/materials/MySnsLink'
+import MySnsLink from '@/materials/MySnsLink'
 
 // common
-import * as Def from '@/common/define'
+import * as Def from 'common/define'
 
 // recoil
 import { useRecoilValue } from 'recoil'
-import { hardType } from '@/recoil/common'
+import { hardType } from 'recoil/common'
 
 const MyProfFooter = () => {
 

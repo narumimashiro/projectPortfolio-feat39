@@ -1,6 +1,6 @@
 import { atom, selector  } from 'recoil'
 // import * as Common from './types'
-import * as Def from '@/common/define'
+import * as Def from 'common/define'
 
 export const displayWidth = atom<number>({
   key: 'displaywidth',

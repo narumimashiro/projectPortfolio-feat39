@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { memo } from 'react'
 
 // common
-import * as Def from '@/common/define'
+import * as Def from 'common/define'
 
 const iconSmall = 36
 const iconLarge = 48
