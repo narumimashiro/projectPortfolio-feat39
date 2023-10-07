@@ -29,3 +29,6 @@ mySnsAccount[SnsAccount.Pixiv]     = {'name' : 'Pixiv',     'url' : linkPixiv,  
 mySnsAccount[SnsAccount.Github]    = {'name' : 'Github',    'url' : linkGithub,    'img' : imgGithub}
 mySnsAccount[SnsAccount.Instagram] = {'name' : 'Instagram', 'url' : linkInstagram, 'img' : imgInstagram}
 mySnsAccount[SnsAccount.X_Twitter] = {'name' : 'X_Twitter', 'url' : linkX_Twitter, 'img' : imgX_Twitter}
+
+// AWS
+export const s3ImageUrl = 'https://naru396-aws-storage.s3-ap-northeast-1.amazonaws.com'
