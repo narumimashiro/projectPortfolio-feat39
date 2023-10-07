@@ -7,7 +7,7 @@ import Link from 'next/link'
 import Geometric from '@/materials/Geometric'
 import MobileNavList from '@/materials/MobileNavList'
 import MySnsLink from '@/materials/MySnsLink'
-import MyProfFooter from '@//ui_components/MyProfFooter'
+import MyProfFooter from '@/ui_components/MyProfFooter'
 
 const TempDev = () => {
 

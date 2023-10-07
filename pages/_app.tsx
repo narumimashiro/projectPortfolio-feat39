@@ -5,7 +5,7 @@ import { RecoilRoot } from 'recoil'
 import '~/globals.sass'
 
 // MyComponents
-import NavHeader from '@//ui_components/NavHeader'
+import NavHeader from '@/ui_components/NavHeader'
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode
