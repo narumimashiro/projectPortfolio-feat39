@@ -1,4 +1,4 @@
-import * as Def from '@/common/define'
+import * as Def from 'common/define'
 
 // ↓ 関数のト書きについて知ったタイミングだったので、作成してみた
 /**
