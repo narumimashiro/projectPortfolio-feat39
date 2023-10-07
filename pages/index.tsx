@@ -13,7 +13,7 @@ import MyProfFooter from '@/ui_components/MyProfFooter'
 export const getStaticProps = async () => {
 
   const isLocal = process.env.NODE_ENV === 'development'
-  axios.defaults.baseURL = isLocal ? 'http://localhost:3000' : process.env.VERCEL_URL
+  axios.defaults.baseURL = isLocal ? 'http://localhost:3000' : process.env.NEXT_PUBLIC_VERCEL_URL
   try {
     const response = await axios.get('/api/getImagesFromS3')
     const imageList: DefType.S3[] = response.data.Contents
