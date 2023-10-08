@@ -32,7 +32,8 @@ const BackgroundImageSlide = ({ imageList }: {imageList: DefType.S3[]}) => {
                      src={`${s3ImageUrl}/${imageList[index].Key}`}
                      alt={`${imageList[index].Key}`}
                      fill={true}
-                     objectFit="cover"
+                     priority={true}
+                     style={{objectFit: 'cover'}}
               />
             </div>
           ))

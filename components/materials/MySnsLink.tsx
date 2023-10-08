@@ -32,7 +32,9 @@ const MySnsLink = memo((props : Props) => {
           <Image src={Def.mySnsAccount[props.service].img}
                  alt={Def.mySnsAccount[props.service].name}
                  width={(props.isMobile ? iconSmall : iconLarge)}
-                 height={(props.isMobile ? iconSmall : iconLarge)}/>
+                 height={(props.isMobile ? iconSmall : iconLarge)}
+                 priority={true}
+          />
         </a>
       </div>
     </>
