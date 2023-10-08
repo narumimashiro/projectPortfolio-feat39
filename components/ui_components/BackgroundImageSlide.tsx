@@ -1,24 +1,13 @@
-import { useState, useEffect } from 'react'
 import Image from 'next/image'
-import axios from 'axios'
 import * as DefType from 'common/deftype'
+import { s3ImageUrl } from 'common/define'
 import styles from '~/components/BackgroundImageSlide.module.sass'
 
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
-// recoil
-import { useRecoilValue } from 'recoil'
-import { displayWidth } from 'recoil/common'
-import { displayHeight } from 'recoil/common'
-
-const s3ImageUrl = 'https://naru396-aws-storage.s3-ap-northeast-1.amazonaws.com'
-
 const BackgroundImageSlide = ({ imageList }: {imageList: DefType.S3[]}) => {
-
-  const dispWidth = useRecoilValue(displayWidth)
-  const dispHeight = useRecoilValue(displayHeight)
 
   const settings = {
     arrows: false,
@@ -28,9 +17,8 @@ const BackgroundImageSlide = ({ imageList }: {imageList: DefType.S3[]}) => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 0,
+    centerMode: true,
     cssEase: 'linear',
-    pauseOnHover: false,
-    pauseOnFocus: false,
   }
   
   return (
@@ -43,14 +31,15 @@ const BackgroundImageSlide = ({ imageList }: {imageList: DefType.S3[]}) => {
               <Image key={el.ETag}
                      src={`${s3ImageUrl}/${imageList[index].Key}`}
                      alt={`${imageList[index].Key}`}
-                     width={dispWidth}
-                     height={dispHeight}></Image>
+                     fill={true}
+                     priority={true}
+                     style={{objectFit: 'cover'}}
+              />
             </div>
           ))
         }
       </Slider>
     </div>
   )
-
 }
 export default BackgroundImageSlide
