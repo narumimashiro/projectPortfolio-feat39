@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { InferGetStaticPropsType } from 'next'
 import styles from '~/Home.module.sass'
