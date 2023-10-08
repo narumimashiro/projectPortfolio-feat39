@@ -1,13 +1,18 @@
 import Head from 'next/head'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { InferGetStaticPropsType } from 'next'
+import styles from '~/Home.module.sass'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
+
+// common
 import * as DefType from 'common/deftype'
 
 // MyComponent
 import BackgoundImageSlide from '@/ui_components/BackgroundImageSlide'
 import MyProfFooter from '@/ui_components/MyProfFooter'
+import HomeTitle from '@/ui_components/HomeTitle'
 
 export const getStaticProps = async () => {
 
@@ -45,6 +50,7 @@ export const getStaticProps = async () => {
 }
 
 const Home = ({ imageList }: Props) => {
+
   return (
     <>
       <Head>
@@ -53,6 +59,9 @@ const Home = ({ imageList }: Props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className='fixed top-0 flex w-full  min-h-full justify-center items-center'>
+        <HomeTitle />
+      </div>
       <BackgoundImageSlide imageList={imageList}/>
       <MyProfFooter />
     </>

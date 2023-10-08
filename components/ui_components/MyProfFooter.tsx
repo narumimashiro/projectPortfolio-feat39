@@ -21,7 +21,7 @@ const MyProfFooter = () => {
 
   return (
     <>
-      <div className='fixed flex justify-center w-full h-24 left-0 bottom-0'>
+      <div className='fixed flex justify-center w-full h-24 left-0 bottom-0 bg-white bg-opacity-60'>
         <div className='grid grid-cols-4 items-center w-1/3 h-full'>
           <div className='flex justify-center'>
             <MySnsLink service={Def.SnsAccount.Pixiv} isMobile={isMobile}/>
