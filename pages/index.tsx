@@ -1,8 +1,6 @@
 import Head from 'next/head'
-import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { InferGetStaticPropsType } from 'next'
-import styles from '~/Home.module.sass'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -14,6 +12,17 @@ import BackgoundImageSlide from '@/ui_components/BackgroundImageSlide'
 import MyProfFooter from '@/ui_components/MyProfFooter'
 import HomeTitle from '@/ui_components/HomeTitle'
 
+const tmpImageList: DefType.S3[] = [
+  {
+    Key: '脳内革命ガール_杏_1.png',
+    ETag: 'an',
+  },
+  {
+    Key: 'フブジェット.png',
+    ETag: 'fubuki',
+  },
+]
+
 export const getStaticProps = async () => {
 
   const isLocal = process.env.NODE_ENV === 'development'
@@ -21,29 +30,29 @@ export const getStaticProps = async () => {
     baseURL: isLocal ? 'http://localhost:3000' : process.env.NEXT_PUBLIC_VERCEL_URL,
   })
 
-  try {
-    const response = await axiosInstance.get('/api/getImagesFromS3')
-    const imageList: DefType.S3[] = response.data.Contents
+  if(!isLocal) {
+    return await axiosInstance.get('/api/getImagesFromS3')
+      .then(res => {
+        const imageList: DefType.S3[] = res.data.Contents
+        return {
+          props: {
+            imageList
+          }
+        }
+      })
+      .catch(err => {
+        console.error('Error : cannot fetching images data' , err)
 
+        return {
+          props: {
+            imageList: tmpImageList
+          }
+        }
+      })
+  } else {
     return {
       props: {
-        imageList
-      }
-    }
-  } catch(err) {
-    console.error('Error : cannot fetching images data' , err)
-    
-    const imageList: DefType.S3[] = [{
-      Key: '脳内革命ガール_杏_1.png',
-      ETag: "an",
-    },{
-      Key: 'フブジェット.png',
-      ETag: "fubuki",
-    }]
-
-    return {
-      props: {
-        imageList
+        imageList: tmpImageList
       }
     }
   }
