@@ -4,10 +4,10 @@ import Link from 'next/link'
 
 
 // 開発中にテキトーに表示させたいときに使うところ
-import Geometric from '@/materials/Geometric'
-import MobileNavList from '@/materials/MobileNavList'
-import MySnsLink from '@/materials/MySnsLink'
-import MyProfFooter from '@/ui_components/MyProfFooter'
+import Geometric from '@/components/atoms/Geometric'
+import MobileNavList from '@/components/atoms/MobileNavList'
+import MySnsLink from '@/components/atoms/MySnsLink'
+import MyProfFooter from '@/components/molecules/MyProfFooter'
 
 const TempDev = () => {
 
