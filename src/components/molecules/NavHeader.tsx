@@ -69,9 +69,6 @@ const NavHeader = ({children} : Props) => {
                 <Link href="/">Home</Link>
               </MobileNavList>
               <MobileNavList onClick={() => setCssActive(false)}>
-                <Link href="/tempdev/tempdev">TempDev</Link>
-              </MobileNavList>
-              <MobileNavList onClick={() => setCssActive(false)}>
                 <Link href="/naru/profile">Profile</Link>
               </MobileNavList>
               <MobileNavList onClick={() => setCssActive(false)}>
@@ -95,7 +92,6 @@ const NavHeader = ({children} : Props) => {
                 <li><Link href="/">Home</Link></li>
               </div>
               <div className='flex mr-5'>
-                <li><Link href="/tempdev/tempdev">TempDev</Link></li><p>/</p>
                 <li><Link href="/naru/profile">Profile</Link></li><p>/</p>
                 <li><Link href="/naru/game">Game</Link></li><p>/</p>
                 <li><Link href="/naru/note">Note</Link></li><p>/</p>
