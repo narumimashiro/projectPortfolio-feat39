@@ -1,13 +1,13 @@
 import { memo } from 'react'
 
-import styles from '~/components/HomeTitle.module.sass'
+import styles from '@/styles/components/HomeTitle.module.sass'
 
 // common
-import * as Def from 'common/define'
+import * as Def from '@/common/define'
 
 // recoil
 import { useRecoilValue } from 'recoil'
-import { hardType } from 'recoil/common'
+import { hardType } from '@/recoil/common'
 
 const TextPc = memo((props : {isPc: boolean}) => {
   return (

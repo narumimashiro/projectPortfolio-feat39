@@ -1,4 +1,4 @@
-import styles from '~/components/Humberger.module.sass'
+import styles from '@/styles/components/Humberger.module.sass'
 
 interface Props {
   isOpen: boolean
