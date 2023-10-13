@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import * as DefType from 'common/deftype'
-import { s3ImageUrl } from 'common/define'
-import styles from '~/components/BackgroundImageSlide.module.sass'
+import * as DefType from '@/common/deftype'
+import { s3ImageUrl } from '@/common/define'
+import styles from '@/styles/components/BackgroundImageSlide.module.sass'
 
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'

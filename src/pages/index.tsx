@@ -4,13 +4,13 @@ import { InferGetStaticPropsType } from 'next'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
-// common
-import * as DefType from 'common/deftype'
+// @/common
+import * as DefType from '@/common/deftype'
 
 // MyComponent
-import BackgoundImageSlide from '@/ui_components/BackgroundImageSlide'
-import MyProfFooter from '@/ui_components/MyProfFooter'
-import HomeTitle from '@/ui_components/HomeTitle'
+import BackgoundImageSlide from '@/components/molecules/BackgroundImageSlide'
+import MyProfFooter from '@/components/molecules/MyProfFooter'
+import HomeTitle from '@/components/molecules/HomeTitle'
 
 const tmpImageList: DefType.S3[] = [
   {

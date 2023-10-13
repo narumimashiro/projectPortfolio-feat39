@@ -4,21 +4,21 @@ import { useState, useEffect, useRef } from 'react'
 import { useWindowWidth } from '@react-hook/window-size'
 
 // styles
-import styles from '~/components/NavHeader.module.sass'
+import styles from '@/styles/components/NavHeader.module.sass'
 
 // My Components
-import HumbergerButton from '@/materials/HumbergerButton'
-import MobileNavList from '@/materials/MobileNavList'
-import Geometric from '@/materials/Geometric'
+import HumbergerButton from '@/components/atoms/HumbergerButton'
+import MobileNavList from '@/components/atoms/MobileNavList'
+import Geometric from '@/components/atoms/Geometric'
 
 // common
-import * as Def from 'common/define'
-import { judgeNeedResize, judgeScreenSize } from 'common/comsystem'
+import * as Def from '@/common/define'
+import { judgeNeedResize, judgeScreenSize } from '@/common/comsystem'
 
 // recoil
 import { useRecoilState } from 'recoil'
-import { displayWidth } from 'recoil/common'
-import { displayHeight } from 'recoil/common'
+import { displayWidth } from '@/recoil/common'
+import { displayHeight } from '@/recoil/common'
 
 interface Props {
   children: ReactNode
