@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import axios from 'axios'
+import { Axios } from '@/common/lib/axios'
 import { InferGetStaticPropsType } from 'next'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
@@ -26,12 +26,9 @@ const tmpImageList: DefType.S3[] = [
 export const getStaticProps = async () => {
 
   const isLocal = process.env.NODE_ENV === 'development'
-  const axiosInstance = axios.create({
-    baseURL: isLocal ? 'http://localhost:3000' : process.env.NEXT_PUBLIC_VERCEL_URL,
-  })
 
   if(!isLocal) {
-    return await axiosInstance.get('/api/getImagesFromS3')
+    return await Axios.get('/api/getImagesFromS3')
       .then(res => {
         const imageList: DefType.S3[] = res.data.Contents
         return {

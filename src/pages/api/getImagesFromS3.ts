@@ -26,7 +26,7 @@ const handler = async (
 
     s3.listObjects(params, (err, data) => {
       if(err) {
-        console.log(err) // for debug
+        // console.log(err) // for debug
         return res.status(500).json('Sorry cannot access')
       } else {
         return res.status(200).json(data)
