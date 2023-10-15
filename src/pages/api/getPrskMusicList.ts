@@ -35,6 +35,7 @@ const handler = async (
         snapshot.docs.map(el => {
           resData.push({
             title: el.data().title,
+            id: el.data().id,
             sekai: {
               artist: el.data().sekai.artist,
               url: el.data().sekai.url
