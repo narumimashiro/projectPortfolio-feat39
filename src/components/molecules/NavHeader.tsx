@@ -88,7 +88,9 @@ const NavHeader = ({children} : Props) => {
               </MobileNavList>
             </ul>
           </nav>
-          {children}
+          <div className='w-full h-screen'>
+            {children}
+          </div>
         </>
       ) : (
         <>

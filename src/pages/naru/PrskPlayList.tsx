@@ -1,21 +1,36 @@
 import Head from 'next/head'
-import { useRecoilValue } from 'recoil'
+import { useEffect } from 'react'
+import { useRecoilState, useRecoilValue } from 'recoil'
 import { Axios } from '@/common/lib/axios'
 
 import type { InferGetServerSidePropsType } from 'next'
 type Props = InferGetServerSidePropsType<typeof getServerSideProps>
-import { PrksMusicInfo } from '@/common/deftype'
 
 // My Components
 import MusicInfo from '@/components/molecules/prsk/MusicInfo'
+import PrskMusicList from '@/components/molecules/prsk/PrskMusicList'
 
 // common
 import * as Def from '@/common/define'
+import { PrksMusicInfo } from '@/common/deftype'
 
 // recoil
 import { hardType } from '@/recoil/common'
+import { prskMusicList, currentList } from '@/recoil/prskPlayList'
 
 export const getServerSideProps = async () => {
+
+  if(process.env.NODE_ENV === 'development') {
+    return await Axios.get('/api/getLocalJson')
+      .then(res=> {
+        const prskMusicList: PrksMusicInfo[] = res.data
+        return {
+          props: {
+            prskMusicList
+          }
+        }
+      })
+  }
 
   try {
     return await Axios.get('/api/getPrskMusicList')
@@ -37,10 +52,20 @@ export const getServerSideProps = async () => {
 }
 
 const PrskPlayList = (props: Props) => {
-
+  
+  if('errorlog' in props) alert('please reload')
+  
   const hard = useRecoilValue(hardType)
+  const [_, setMusicList] = useRecoilState(prskMusicList)
+  const currentMusicList = useRecoilValue(currentList)
 
-  return ('prskMusicList' in props) ? (
+  useEffect(() => {
+    if('prskMusicList' in props) {
+      setMusicList(props.prskMusicList)
+    }
+  })
+  
+  return (
     <>
       <Head>
         <title>B.T.W | PlayList</title>
@@ -48,13 +73,25 @@ const PrskPlayList = (props: Props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       {
-        (hard === Def.HardType.PC) ? (
+        (hard !== Def.HardType.MOBILE) ? (
           <>
-            {
-              props.prskMusicList.map((el, index) => (
-                <MusicInfo key={index} info={el} />
-              ))
-            }
+            <div className='flex w-full h-[calc(100%-85px)]'>
+              <div className='w-1/2 flex justify-center items-end pl-2'>
+                <PrskMusicList>
+                  {
+                    currentMusicList.map((el, index) => (
+                      <MusicInfo key={index} info={el} />
+                    ))
+                  }
+                </PrskMusicList>
+              </div>
+              <div className='w-1/2 flex justify-center items-end pr-2'>
+
+              </div>
+            </div>
+            <div className='flex w-full h-20 bg-slate-500 bottom-0'>
+
+            </div>
           </>
         ) : (
           <>
@@ -63,8 +100,6 @@ const PrskPlayList = (props: Props) => {
         )
       }
     </>
-  ) : (
-    <></>
   )
 }
 export default PrskPlayList

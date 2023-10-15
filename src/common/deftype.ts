@@ -10,6 +10,7 @@ export interface S3 {
 
 export interface PrksMusicInfo {
   title: string,
+  id: string,
   sekai: {
     artist: string,
     url: string

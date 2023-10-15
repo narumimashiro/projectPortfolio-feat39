@@ -32,3 +32,14 @@ mySnsAccount[SnsAccount.X_Twitter] = {'name' : 'X_Twitter', 'url' : linkX_Twitte
 
 // AWS
 export const s3ImageUrl = 'https://naru396-aws-storage.s3-ap-northeast-1.amazonaws.com'
+
+// projectSEKAI
+export const allArtist = 'allartist'
+export const prskALL = 'prskall'
+export const VirtualSinger = 'virtual'
+export const LeoNeed = 'leoneed'
+export const MoreMoreJump = 'moremore'
+export const VividBadSquad = 'vividbad'
+export const WonderlandsShowTime = 'wonderlands'
+export const NightcodeAt25 = 'nightcord'
+export const Preset = 'preset'
