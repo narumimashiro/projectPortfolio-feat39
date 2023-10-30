@@ -2,10 +2,11 @@ import type { ReactElement, ReactNode } from 'react'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { RecoilRoot } from 'recoil'
+
 import '@/styles/globals.sass'
 
 // MyComponents
-import NavHeader from '@/components/molecules/NavHeader'
+// import NavHeader from '@/components/molecules/NavHeader'
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode
@@ -29,9 +30,9 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   // 指定が無ければ共通ナビゲーションヘッダーが表示される
   return (
     <RecoilRoot>
-      <NavHeader>
+      {/* <NavHeader> */}
         <Component { ...pageProps } />
-      </NavHeader>
+      {/* </NavHeader> */}
     </RecoilRoot>
   )
 }
