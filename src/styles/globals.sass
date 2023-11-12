@@ -1,6 +1,7 @@
 html
   font-family: 'Noto Sans JP', Cambria
   background: #FEEEED
+  width: 100%
 
 a
   color: inherit
@@ -12,6 +13,7 @@ a
 @media (prefers-color-scheme: dark)
   html
     color-scheme: dark
+    width: 100%
   body
     color: #502c2c
 
@@ -39,6 +41,29 @@ a
 @import "~tailwindcss/components"
 @import "~tailwindcss/utilities"
 
+// common styles
 @layer components
-  .page-content
+  .page-content-landscape
     @apply w-full h-screen pt-20
+
+@layer components
+  .page-content-portrait
+    @apply w-full h-screen pt-5
+
+.text-25
+  // for title etc...
+  font-size: 25px
+  font-weight: bold
+
+.text-16
+  // for sentences etc...
+  font-size: 16px
+
+.text-16-ex
+  font-size: 16px
+  font-weight: bold
+
+.wrap-column
+  display: flex
+  align-items: center
+  flex-direction: column

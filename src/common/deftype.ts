@@ -20,3 +20,9 @@ export interface PrksMusicInfo {
     url: string
   }
 }
+
+export interface MyBaseProfile {
+  name: string,
+  faves: string,
+  introduce: string
+}

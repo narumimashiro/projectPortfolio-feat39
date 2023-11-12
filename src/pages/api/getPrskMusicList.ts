@@ -29,7 +29,7 @@ const handler = async (
 
   // GET Request
   if(req.method === 'GET') {
-    let resData = Array<PrksMusicInfo>()
+    const resData = Array<PrksMusicInfo>()
     await getDocs(dataCollection)
       .then(snapshot => {
         snapshot.docs.map(el => {

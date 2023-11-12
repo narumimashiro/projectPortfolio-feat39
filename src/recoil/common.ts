@@ -1,4 +1,4 @@
-import { atom, selector  } from 'recoil'
+import { atom, selector } from 'recoil'
 // import * as Common from './types'
 import * as Def from '@/common/define'
 

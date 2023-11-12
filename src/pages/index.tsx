@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import { Axios } from '@/common/lib/axios'
 import { InferGetStaticPropsType } from 'next'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
 // @/common
 import * as DefType from '@/common/deftype'
+import { Axios } from '@/common/lib/axios'
 
 // MyComponent
 import BackgoundImageSlide from '@/components/molecules/BackgroundImageSlide'
