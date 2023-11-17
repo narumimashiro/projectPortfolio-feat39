@@ -51,8 +51,8 @@ const MyProfile = (props: {profile: MyBaseProfile}) => {
         <IAM
           name={props.profile.name}
         />
-        <div className={(hard == HardType.MOBILE) ? `${styles['content-portrait']}`
-                                                  : `${styles['content-landscape']}`}>
+        <div className={(hard === HardType.MOBILE) ? `${styles['content-portrait']}`
+                                                   : `${styles['content-landscape']}`}>
           <div>
             <h6 className='text-16-ex'>{FAVES}</h6>
             <span className='text-16'>{props.profile.faves}</span>

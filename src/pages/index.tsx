@@ -12,17 +12,6 @@ import BackgoundImageSlide from '@/components/molecules/BackgroundImageSlide'
 import MyProfFooter from '@/components/molecules/MyProfFooter'
 import HomeTitle from '@/components/molecules/HomeTitle'
 
-const tmpImageList: DefType.S3[] = [
-  {
-    Key: '脳内革命ガール_杏_1.png',
-    ETag: 'an',
-  },
-  {
-    Key: 'フブジェット.png',
-    ETag: 'fubuki',
-  },
-]
-
 export const getStaticProps = async () => {
 
   const isLocal = process.env.NODE_ENV === 'development'
@@ -42,14 +31,14 @@ export const getStaticProps = async () => {
 
         return {
           props: {
-            imageList: tmpImageList
+            imageList: []
           }
         }
       })
   } else {
     return {
       props: {
-        imageList: tmpImageList
+        imageList: []
       }
     }
   }

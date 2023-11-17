@@ -1,8 +1,10 @@
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import Head from 'next/head'
+import styles from '@/styles/components/profile/Profile.module.sass'
 
 // My Components
 import MyProfile from '@/components/molecules/profile/MyProfile'
+import MyCreation from '@/components/molecules/profile/MyCreation'
 
 // common
 import { MyBaseProfile } from '@/common/deftype'
@@ -37,8 +39,9 @@ const Profile = ({ profileData }: Props): JSX.Element => {
         <meta name="description" content="My profile page" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <div>
+      <div className={styles.container}>
         <MyProfile profile={profileData} />
+        <MyCreation />
       </div>
     </>
   )

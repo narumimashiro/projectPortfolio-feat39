@@ -17,7 +17,7 @@ export const hardType = selector({
   get: ({ get }) => {
     const dispWidth = get(displayWidth)
     if(dispWidth >= Def.SIZE_MIN_PC) return Def.HardType.PC
-    else if(dispWidth < Def.SIZE_MAX_MOBILE) return Def.HardType.MOBILE
+    else if(dispWidth <= Def.SIZE_MAX_MOBILE) return Def.HardType.MOBILE
     else return Def.HardType.TABLET
   }
 })
