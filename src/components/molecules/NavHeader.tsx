@@ -13,7 +13,7 @@ import Geometric from '@/components/atoms/Geometric'
 
 // common
 import * as Def from '@/common/define'
-import { judgeNeedResize, judgeScreenSize } from '@/common/comsystem'
+import { judgeNeedResize, judgeScreenSize } from '@/common/function/comsystem'
 
 // recoil
 import { useRecoilState } from 'recoil'
@@ -88,7 +88,7 @@ const NavHeader = ({children} : Props) => {
               </MobileNavList>
             </ul>
           </nav>
-          <div className='w-full h-screen'>
+          <div className='page-content-portrait'>
             {children}
           </div>
         </>
@@ -109,7 +109,7 @@ const NavHeader = ({children} : Props) => {
               </div>
             </nav>
           </div>
-          <div className='page-content'>
+          <div className='page-content-landscape'>
             {children}
           </div>
         </>

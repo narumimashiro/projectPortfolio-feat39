@@ -11,10 +11,10 @@ const linkPixiv = 'https://www.pixiv.net/users/34922723'
 const linkGithub = 'https://github.com/narumimashiro'
 const linkInstagram = 'https://www.instagram.com/narumikr_/'
 const linkX_Twitter = 'https://twitter.com/n4rumikr396_'
-const imgPixiv = '/images/snsicon/pixiv.png'
-const imgGithub = '/images/snsicon/github.png'
-const imgInstagram = '/images/snsicon/instagram.png'
-const imgX_Twitter = '/images/snsicon/x_twitter.png'
+const imgPixiv = '/images/icon/pixiv.png'
+const imgGithub = '/images/icon/github.png'
+const imgInstagram = '/images/icon/instagram.png'
+const imgX_Twitter = '/images/icon/x_twitter.png'
 
 export const enum SnsAccount {
   Pixiv, Github, Instagram, X_Twitter
