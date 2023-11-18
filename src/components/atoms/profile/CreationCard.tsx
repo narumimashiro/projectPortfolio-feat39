@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { useState } from 'react'
 import styles from '@/styles/components/profile/CreationCard.module.sass'
 
 // common
@@ -10,75 +10,32 @@ import { hardType } from '@/recoil/common'
 
 // MaterialUI
 import Card from '@mui/material/Card'
-import CardMedia from '@mui/material/CardMedia'
 import CardContent from '@mui/material/CardContent'
-import Typography from '@mui/material/Typography'
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
+// My Components
+import { ContentThumbnail, ContentTitle, ContentLink, ContentDescription } from './PartsOfCreationCard'
 
 // constant
 import { CreationInfo } from '@/components/atoms/profile/creations'
-const TEXT_LINK_TO_SITE = 'Visit the website'
-
-type ContentThumbnail = {
-  title: string,
-  imgSrc: string
-}
-const ContentThumbnail = ({title,  imgSrc}: ContentThumbnail) => {
-  return (
-    <CardMedia
-      className={styles.thumbnail}
-      component='img'
-      alt={title}
-      image={`/images/creation/${imgSrc}`}
-    />
-  )
-}
-
-const ContentTitle = ({title}: {title: string}) => {
-  return (
-    <Typography
-      gutterBottom variant='h5'
-      // component='div'
-      className='double-underline'
-    >
-      {title}
-    </Typography>
-  )
-}
-
-const ContentLink = ({ url }: { url: string}) => {
-  return (
-    <div className={styles['link-wrap']}>
-      <Link
-        href={url}
-        target='_blink'
-      >
-        {TEXT_LINK_TO_SITE}
-      </Link>
-    </div>
-  )
-}
-
-const ContentDescription = ({description} : {description: string}) => {
-  return (
-    <Typography
-      variant='body2'
-      color='text.secondary'
-      className={styles['description-area']}
-    >
-      {description}
-    </Typography>
-  )
-}
 
 type Props = {
   creation: CreationInfo,
-  placement: string
+  placement: string,
 }
 const CreationCard = (props: Props) => {
   const { title, imgSrc, description, url } = props.creation
   const isLeft = props.placement === 'left'
 
   const hard = useRecoilValue(hardType)
+  const [open, setOpen] = useState(true)
+
+  const handlerChange = () => {
+    setOpen(!open)
+  }
 
   return (
     <>
@@ -106,8 +63,8 @@ const CreationCard = (props: Props) => {
               </>
             ) : (
               <>
-                  <Card
-                    elevation={12}
+                <Card
+                  elevation={12}
                   className={`content-center ${styles['creation-area']}`}
                 >
                   <CardContent
@@ -125,8 +82,34 @@ const CreationCard = (props: Props) => {
               </>
             )
           ) : (
-              <>
-              </>
+              <Card className={`content-center ${styles['creation-area-portrait']}`}>
+                <Accordion
+                  className={open ? '' : `${styles.accordion}`}
+                  onChange={handlerChange}
+                >
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                  >
+                    <ContentTitle title={title} />
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <ContentLink url={url} />
+                    <ContentDescription description={description} />
+                    <ContentThumbnail
+                      title={title}
+                      imgSrc={imgSrc}
+                    />
+                  </AccordionDetails>
+                </Accordion>
+                {
+                  open && (
+                    <ContentThumbnail
+                      title={title}
+                      imgSrc={imgSrc}
+                    />
+                  )
+                }
+              </Card>
           )
         }
       </div>
