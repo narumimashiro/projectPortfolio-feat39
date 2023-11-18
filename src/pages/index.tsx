@@ -1,37 +1,23 @@
 import Head from 'next/head'
-import axios from 'axios'
 import { InferGetStaticPropsType } from 'next'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
 // @/common
 import * as DefType from '@/common/deftype'
+import { Axios } from '@/common/lib/axios'
 
 // MyComponent
 import BackgoundImageSlide from '@/components/molecules/BackgroundImageSlide'
 import MyProfFooter from '@/components/molecules/MyProfFooter'
 import HomeTitle from '@/components/molecules/HomeTitle'
 
-const tmpImageList: DefType.S3[] = [
-  {
-    Key: '脳内革命ガール_杏_1.png',
-    ETag: 'an',
-  },
-  {
-    Key: 'フブジェット.png',
-    ETag: 'fubuki',
-  },
-]
-
 export const getStaticProps = async () => {
 
   const isLocal = process.env.NODE_ENV === 'development'
-  const axiosInstance = axios.create({
-    baseURL: isLocal ? 'http://localhost:3000' : process.env.NEXT_PUBLIC_VERCEL_URL,
-  })
 
   if(!isLocal) {
-    return await axiosInstance.get('/api/getImagesFromS3')
+    return await Axios.get('/api/getImagesFromS3')
       .then(res => {
         const imageList: DefType.S3[] = res.data.Contents
         return {
@@ -45,14 +31,14 @@ export const getStaticProps = async () => {
 
         return {
           props: {
-            imageList: tmpImageList
+            imageList: []
           }
         }
       })
   } else {
     return {
       props: {
-        imageList: tmpImageList
+        imageList: []
       }
     }
   }

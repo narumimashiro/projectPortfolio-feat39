@@ -11,10 +11,10 @@ const linkPixiv = 'https://www.pixiv.net/users/34922723'
 const linkGithub = 'https://github.com/narumimashiro'
 const linkInstagram = 'https://www.instagram.com/narumikr_/'
 const linkX_Twitter = 'https://twitter.com/n4rumikr396_'
-const imgPixiv = '/images/snsicon/pixiv.png'
-const imgGithub = '/images/snsicon/github.png'
-const imgInstagram = '/images/snsicon/instagram.png'
-const imgX_Twitter = '/images/snsicon/x_twitter.png'
+const imgPixiv = '/images/icon/pixiv.png'
+const imgGithub = '/images/icon/github.png'
+const imgInstagram = '/images/icon/instagram.png'
+const imgX_Twitter = '/images/icon/x_twitter.png'
 
 export const enum SnsAccount {
   Pixiv, Github, Instagram, X_Twitter
@@ -32,3 +32,14 @@ mySnsAccount[SnsAccount.X_Twitter] = {'name' : 'X_Twitter', 'url' : linkX_Twitte
 
 // AWS
 export const s3ImageUrl = 'https://naru396-aws-storage.s3-ap-northeast-1.amazonaws.com'
+
+// projectSEKAI
+export const allArtist = 'allartist'
+export const prskALL = 'prskall'
+export const VirtualSinger = 'virtual'
+export const LeoNeed = 'leoneed'
+export const MoreMoreJump = 'moremore'
+export const VividBadSquad = 'vividbad'
+export const WonderlandsShowTime = 'wonderlands'
+export const NightcodeAt25 = 'nightcord'
+export const Preset = 'preset'
