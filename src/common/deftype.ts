@@ -7,3 +7,22 @@ export interface S3 {
   Size?: number,
   StorageClass?: string
 }
+
+export interface PrksMusicInfo {
+  title: string,
+  id: string,
+  sekai: {
+    artist: string,
+    url: string
+  },
+  original: {
+    artist: string,
+    url: string
+  }
+}
+
+export interface MyBaseProfile {
+  name: string,
+  faves: string,
+  introduce: string
+}

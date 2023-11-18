@@ -1,0 +1,13 @@
+[
+  {
+    "title": "曲名",
+    "sekai": {
+      "artist": "ユニット名",
+      "url": "YoutubeURL"
+    },
+    "original": {
+      "artist": "ボカロP",
+      "url": "YoutubeURL"
+    }
+  }
+]
