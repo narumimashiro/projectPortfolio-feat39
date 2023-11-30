@@ -19,10 +19,10 @@ export const creationList = [
     url: 'https://recipe-creator-mauve.vercel.app/'
   },
   {
-    title: 'MyFirstWebSite',
-    imgSrc: 'my_first_site.png',
+    title: 'What is i18n',
+    imgSrc: 'i18n.png',
     description: 'texttexttexttexttexttexttexttexttexttexttexttext',
-    url: 'https://project-self-dept-next-js.vercel.app/'
+    url: 'https://what-is-i18n.vercel.app/'
   },
   {
     title: 'Recipe Creator',
